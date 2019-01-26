@@ -3,9 +3,10 @@ pipeline{
 		label 'master'
 	}
 	stages{
-		stage('First'){
+		stage('SCM'){
 			steps{
-				echo 'First'
+				echo 'Checking Out'
+				checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'Mukhasir_Github', url: 'git@github.com:mukhasir/JenkinsfilePaC.git']]])
 			}
 		}
 		stage('Second'){
