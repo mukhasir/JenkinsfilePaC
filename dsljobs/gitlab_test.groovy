@@ -1,0 +1,11 @@
+job('Gitlab_Test'){
+	scm{
+	    git{
+	      remote{
+	        url('https://gitlab.mynisum.com/ehour/ehour.git')
+	        credentials('ehour_jenkins')
+	      }
+	      branch('master')
+	    }
+	}
+}
